@@ -1,0 +1,107 @@
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>title</title>
+    <link rel="stylesheet" href="http://localhost:1313/css/style.css" type="text/css" media="all" />
+    
+    <link rel="alternate" type="application/rss+xml" href="http://localhost:1313/index.xml" title="title" />
+     </head>
+
+
+<body>
+    <div class="container">
+        <nav>
+    <div class="menus">
+        <span>
+            <a href="http://localhost:1313/">Hwang Soo hyun</a>
+        </span>
+        <span>
+            <a href="http://localhost:1313/work.html">Work</a>
+        </span>
+        <span>
+            <a href="http://localhost:1313/biography.html">Biography</a>
+        </span>
+        <span>
+            <a href="http://localhost:1313/news.html">News</a>
+        </span>
+        <span>
+            <a href="http://localhost:1313/contact.html">Contact</a>
+        </span>
+    </div>
+</nav>
+
+        <main>
+            <div class="left">
+                <ul class="works-ul">
+                    
+                </ul>
+            </div>
+            <div class="right">
+                <div class="thumbnail">
+                    <img class="preview-image" src="" alt="">
+                </div>
+            </div>
+        </main>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const count = 7;
+            const random = Math.floor(Math.random() * count) + 1;
+
+            document.body.style.backgroundImage =
+                `url("/assets/background/가로${random}.webp")`;
+            document.body.style.filter = "grayscale(100%)";
+            document.body.style.backgroundPosition = "center";
+            document.body.style.backgroundRepeat = "no-repeat";
+
+            const menus = document.querySelectorAll(".menus span");
+            const gap = 50;
+            const padding = 20;
+
+            const positions = [];
+
+            menus.forEach(menu => {
+                menu.style.position = "fixed";
+
+                const width = menu.offsetWidth;
+                const height = menu.offsetHeight;
+
+                let x, y;
+                let tries = 0;
+
+                do {
+                    x = padding + Math.random() * (window.innerWidth - width - padding * 2);
+                    y = padding + Math.random() * (window.innerHeight - height - padding * 2);
+
+                    tries++;
+
+                    const overlap = positions.some(pos => {
+                        return !(
+                            x + width + gap < pos.x ||
+                            x - gap > pos.x + pos.width ||
+                            y + height + gap < pos.y ||
+                            y - gap > pos.y + pos.height
+                        );
+                    });
+
+                    if (!overlap) break;
+
+                } while (tries < 1000);
+
+                menu.style.left = `${x}px`;
+                menu.style.top = `${y}px`;
+
+                positions.push({
+                    x,
+                    y,
+                    width,
+                    height
+                });
+            });
+        });
+    </script>
+
+</html>

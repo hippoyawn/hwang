@@ -1,0 +1,23 @@
+<html lang="en">
+{{ partial "head.html" . }}
+
+<body>
+    <div class="container {{ .Section }}">
+        {{ partial "nav.html" . }}
+        <main>
+            <p>Work</p>
+            <ul>
+                {{ range sort (where .Site.RegularPages "Section" "work") "Date" "desc" }}
+                <li>
+                    <a href="{{ .RelPermalink }}">
+                        {{ .Title }}
+                    </a>
+                </li>
+                {{ end }}
+            </ul>
+        </main>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<html lang="en">
+{{ partial "head.html" . }}
+
+<body>
+    <div class="container">
+        {{ partial "nav.html" . }}
+        <main>
+            <div class="left">
+                <ul class="works-ul">
+                    {{ range sort (where .Site.RegularPages "Section" "works") "Date" "desc" }}
+                    <li data-thumbnail="{{ .Site.BaseURL }}{{ .Params.thumbnail }}">
+                        <a href="{{ .RelPermalink }}">
+                            {{ .Title }}
+                        </a>
+                    </li>
+                    {{ end }}
+                </ul>
+            </div>
+            <div class="right">
+                <div class="thumbnail">
+                    <img class="preview-image" src="" alt="">
+                </div>
+            </div>
+        </main>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const count = 7;
+            const random = Math.floor(Math.random() * count) + 1;
+
+            document.body.style.backgroundImage =
+                `url("/assets/background/가로${random}.webp")`;
+            document.body.style.filter = "grayscale(100%)";
+            document.body.style.backgroundPosition = "center";
+            document.body.style.backgroundRepeat = "no-repeat";
+
+            const menus = document.querySelectorAll(".menus span");
+            const gap = 50;
+            const padding = 20;
+
+            const positions = [];
+
+            menus.forEach(menu => {
+                menu.style.position = "fixed";
+
+                const width = menu.offsetWidth;
+                const height = menu.offsetHeight;
+
+                let x, y;
+                let tries = 0;
+
+                do {
+                    x = padding + Math.random() * (window.innerWidth - width - padding * 2);
+                    y = padding + Math.random() * (window.innerHeight - height - padding * 2);
+
+                    tries++;
+
+                    const overlap = positions.some(pos => {
+                        return !(
+                            x + width + gap < pos.x ||
+                            x - gap > pos.x + pos.width ||
+                            y + height + gap < pos.y ||
+                            y - gap > pos.y + pos.height
+                        );
+                    });
+
+                    if (!overlap) break;
+
+                } while (tries < 1000);
+
+                menu.style.left = `${x}px`;
+                menu.style.top = `${y}px`;
+
+                positions.push({
+                    x,
+                    y,
+                    width,
+                    height
+                });
+            });
+        });
+    </script>
+
+</html>

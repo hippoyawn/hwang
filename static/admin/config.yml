@@ -1,0 +1,65 @@
+# backend:
+#   name: github
+#   repo: booklice/booklice
+#   branch: main
+#   base_url: https://sveltia-auth.youngjo.workers.dev
+
+backend:
+  name: test-repo
+
+logo:
+  src: ../assets/logo.jpg
+  show_in_header: true
+
+app_title: Hwang Soo Hyun
+
+media_folder: /static/assets
+public_folder: /assets
+
+media_libraries:
+  default:
+    config:
+      transformations:
+        raster_image:
+          format: webp
+          quality: 80
+          width: 1200
+          height: 1200
+        svg:
+          optimize: true
+
+collections:
+  - name: works # Used in routes, e.g., /admin/collections/post
+    label: Works # Used in the UI
+    folder: /content/works # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    media_folder: "{{media_folder}}/works/{{slug}}"
+    public_folder: "{{public_folder}}/works/{{slug}}"
+    i18n: true
+    fields:
+      - name: title
+        label: 제목
+        widget: string
+        i18n: true
+        required: true
+
+      - name: date
+        label: 날짜
+        widget: datetime
+        type: date
+        i18n: duplicate
+        required: true
+
+
+      - name: description
+        label: 설명
+        widget: text
+        i18n: true
+        required: true
+
+      - name: images
+        label: 이미지
+        widget: file
+        i18n: duplicate
+        multiple: true
+        required: false
