@@ -25,7 +25,7 @@
     </div>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            const count = 7;
+            const count = 5;
             const random = Math.floor(Math.random() * count) + 1;
 
             document.body.style.backgroundImage =
@@ -40,7 +40,7 @@
 
             const positions = [];
 
-            menus.forEach(menu => {
+            for (const menu of menus) {
                 menu.style.position = "fixed";
 
                 const width = menu.offsetWidth;
@@ -77,7 +77,11 @@
                     width,
                     height
                 });
-            });
+            }
+
+            for (const menu of menus) {
+                menu.style.visibility = "visible";
+            }
         });
     </script>
 

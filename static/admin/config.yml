@@ -29,37 +29,78 @@ media_libraries:
           optimize: true
 
 collections:
-  - name: works # Used in routes, e.g., /admin/collections/post
-    label: Works # Used in the UI
-    folder: /content/works # The path to the folder where the documents are stored
-    create: true # Allow users to create new documents in this collection
-    media_folder: "{{media_folder}}/works/{{slug}}"
-    public_folder: "{{public_folder}}/works/{{slug}}"
-    i18n: true
+  - name: work
+    label: Work
+    folder: /content/work
+    create: true
+    media_folder: "{{media_folder}}/work/{{slug}}"
+    public_folder: "{{public_folder}}/work/{{slug}}"
     fields:
       - name: title
         label: 제목
         widget: string
-        i18n: true
         required: true
 
-      - name: date
-        label: 날짜
+      - name: workType
+        label: 작업 유형
+        widget: string
+        required: true
+
+      - name: startDate
+        label: 시작 날짜
         widget: datetime
         type: date
-        i18n: duplicate
         required: true
 
+      - name: endDate
+        label: 종료 날짜
+        widget: datetime
+        type: date
+        required: true
+
+      - name: venue
+        label: 공연 장소
+        widget: string
+        required: true
+
+      - name: credit
+        label: 크레딧
+        widget: text
+        required: true
 
       - name: description
-        label: 설명
+        label: 작품 내용
         widget: text
-        i18n: true
         required: true
+
+      - name: articles
+        label: 기사
+        widget: list
+        required: false
+        fields:
+          - name: title
+            label: 제목
+            widget: string
+
+          - name: url
+            label: 링크
+            widget: string
+
+      - name: critics
+        label: 비평
+        widget: list
+        required: false
+        fields:
+          - name: title
+            label: 제목
+            widget: string
+
+          - name: url
+            label: 링크
+            widget: string
 
       - name: images
         label: 이미지
         widget: file
-        i18n: duplicate
         multiple: true
         required: false

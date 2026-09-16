@@ -1,6 +1,6 @@
 ---
-title: "Work"
+title: "work"
 url: "/work.html"
-outputs:
-  - HTML
+outputs : 
+  - "HTML"
 ---

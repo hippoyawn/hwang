@@ -27,6 +27,7 @@ markup:
 
 permalinks:
       work: "/work/:contentbasename"
+
 menu:
   main:
     - identifier: home

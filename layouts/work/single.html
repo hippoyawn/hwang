@@ -1,14 +1,41 @@
 <html lang="en">
-{{ partial "head.html" . }}
+    {{ partial "head.html" . }}
 
-<body>
-    <div class="container {{ .Section }}-detail">
-        {{ partial "nav.html" . }}
-        <main>
-            <div class="left"></div>
-            <div class="right"></div>
-        </main>
-    </div>
-</body>
+    <body>
+        <div class="container {{ .Section }}-detail">
+            {{ partial "nav.html" . }}
 
+            <main>
+                <div class="left">
+                    <p class="title">{{ .Title }}</p>
+                    <p class="workType">{{ .Params.workType }}</p>
+                    <p class="date">
+                        {{ time .Params.startDate | time.Format "2006.01.02" }}-{{ time .Params.endDate | time.Format "02" }}
+                    </p>
+                    <p class="venue">{{ .Params.venue }}</p>
+                    <p class="credit">{{ .Params.credit }}</p>
+                    <p class="description">{{ .Params.description }}</p>
+                    <div class="articles-container">
+                        <ul>
+                            {{ range .Params.articles }}
+                                <li>
+                                    <a href="{{ .url }}">{{ .title }}</a>
+                                </li>
+                            {{ end }}
+                        </ul>
+                    </div>
+                    <div class="critics-container">
+                        <ul>
+                            {{ range .Params.critics }}
+                                <li>
+                                    <a href="{{ .url }}">{{ .title }}</a>
+                                </li>
+                            {{ end }}
+                        </ul>
+                    </div>
+                </div>
+                <div class="right"></div>
+            </main>
+        </div>
+    </body>
 </html>

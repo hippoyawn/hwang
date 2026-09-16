@@ -1,13 +1,13 @@
 <html lang="en">
-{{ partial "head.html" . }}
+    {{ partial "head.html" . }}
 
-<body>
-    <div class="container {{ .File.BaseFileName  }}">
-        {{ partial "nav.html" . }}
-        <main>
-            <div>{{ .Content }}</div>
-        </main>
-    </div>
-</body>
 
+    <body>
+        <div class="container {{ .File.BaseFileName }}">
+            {{ partial "nav.html" . }}
+            <main>
+                {{ .Content }}
+            </main>
+        </div>
+    </body>
 </html>
