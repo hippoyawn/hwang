@@ -29,6 +29,62 @@ media_libraries:
           optimize: true
 
 collections:
+  - name: biography
+    label: Biography
+    files:
+      - name: biography
+        label: Biography
+        file: content/biography/biography.md
+        fields:
+          - name: experience
+            label: 경력
+            widget: list
+            fields:
+              - { name: year, label: 년도, widget: string }
+              - { name: title, label: 내용, widget: string }
+
+          - name: awards
+            label: 수상
+            widget: list
+            fields:
+              - { name: year, label: 년도, widget: string }
+              - { name: title, label: 내용, widget: string }
+
+          - name: residencies
+            label: 레지던시
+            widget: list
+            fields:
+              - { name: year, label: 년도, widget: string }
+              - { name: title, label: 내용, widget: string }
+
+          - name: education_workshops
+            label: 교육 및 워크숍
+            widget: list
+            fields:
+              - { name: year, label: 년도, widget: string }
+              - { name: title, label: 내용, widget: string }
+
+          - name: choreography
+            label: 안무작
+            widget: list
+            fields:
+              - { name: year, label: 년도, widget: string }
+              - { name: title, label: 내용, widget: string }
+
+          - name: collaborations
+            label: 협업 및 협력 프로젝트
+            widget: list
+            fields:
+              - { name: year, label: 년도, widget: string }
+              - { name: title, label: 내용, widget: string }
+
+          - name: performances
+            label: 출연작
+            widget: list
+            fields:
+              - { name: year, label: 년도, widget: string }
+              - { name: title, label: 내용, widget: string }
+
   - name: work
     label: Work
     folder: /content/work
@@ -65,8 +121,12 @@ collections:
 
       - name: credit
         label: 크레딧
-        widget: text
+        widget: textarea
         required: true
+
+      - name: production
+        label: 제작, 주최 및 후원
+        widget: text
 
       - name: description
         label: 작품 내용

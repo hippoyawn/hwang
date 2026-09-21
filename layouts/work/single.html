@@ -1,20 +1,32 @@
 <html lang="en">
     {{ partial "head.html" . }}
-
     <body>
-        <div class="container {{ .Section }}-detail">
+        <div class="container work-detail">
             {{ partial "nav.html" . }}
-
             <main>
                 <div class="left">
-                    <p class="title">{{ .Title }}</p>
-                    <p class="workType">{{ .Params.workType }}</p>
-                    <p class="date">
-                        {{ time .Params.startDate | time.Format "2006.01.02" }}-{{ time .Params.endDate | time.Format "02" }}
-                    </p>
-                    <p class="venue">{{ .Params.venue }}</p>
-                    <p class="credit">{{ .Params.credit }}</p>
-                    <p class="description">{{ .Params.description }}</p>
+                    <div class="top-container">
+                        <div>
+                            <p class="title">{{ .Title }}</p>
+                            <p class="workType">{{ .Params.workType }}</p>
+                            <p class="date">
+                                {{ time .Params.startDate | time.Format "2006.01.02" }}-{{ time .Params.endDate | time.Format "02" }}
+                            </p>
+                            <p class="venue">{{ .Params.venue }}</p>
+                            <p class="production">{{ .Params.production }}</p>
+                        </div>
+
+                        <div>
+                            <p class="description">{{ .Params.description }}</p>
+                        </div>
+
+                        <div>
+                            <p class="credit">
+                                {{ .Params.credit | markdownify }}
+                            </p>
+                        </div>
+                    </div>
+
                     <div class="articles-container">
                         <ul>
                             {{ range .Params.articles }}
@@ -24,6 +36,7 @@
                             {{ end }}
                         </ul>
                     </div>
+
                     <div class="critics-container">
                         <ul>
                             {{ range .Params.critics }}
@@ -34,7 +47,11 @@
                         </ul>
                     </div>
                 </div>
-                <div class="right"></div>
+                <div class="right">
+                    {{ range .Params.images }}
+                        <img src="{{ . }}" alt="" />
+                    {{ end }}
+                </div>
             </main>
         </div>
     </body>

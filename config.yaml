@@ -1,4 +1,4 @@
-title: title
+title: Hwang Soo hyun
 languageCode: en-us
 titleCaseStyle: none
 capitalizeListTitles: false
@@ -26,7 +26,7 @@ markup:
     tabWidth: 4
 
 permalinks:
-      work: "/work/:contentbasename"
+  work: "/work/:contentbasename"
 
 menu:
   main:

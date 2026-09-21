@@ -1,3 +1,10 @@
+@font-face {
+    font-family: "SM3태명조";
+    src: url("/fonts/SM3태명조-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+}
+
 ::-moz-selection {
     background: black;
     color: white;
@@ -16,8 +23,8 @@ html,
 body {
     width: 100%;
     height: 100%;
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.7rem;
+    line-height: 1.8rem;
+
 }
 
 body {
@@ -26,33 +33,62 @@ body {
     padding: 0;
     width: 100%;
     max-width: 1920px;
-    height: 100%;
+    height: 100dvh;
     background: white;
 }
 
 .container {
     position: relative;
     box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-    overflow-y: auto;
     scrollbar-width: none;
-    padding: 20px 20px
+    padding: 20px 20px 0 20px;
+    width: 100%;
+    display: grid;
+    grid-template: "nav"
+        "main";
+    grid-template-rows: 150px calc(100dvh - 170px);
+    height: 100%;
+    overflow: hidden;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid black;
+    padding: 0;
+    margin: 0;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    height: 100%;
+}
+
+main {
+    font-family: "SM3태명조";
+    height: auto;
+    overflow-y: scroll;
+    border-top: 1px solid black;
+
 }
 
 .menus {
+    font-family: Helvetica, "Arial", sans-serif;
     display: grid;
     grid-template-columns: repeat(4, auto);
-    grid-template-rows: repeat(4, 1fr);
-    gap: 10px;
-    width: 400px;
+    grid-template-rows: repeat(4, auto);
+    max-width: 420px;
+
 }
 
 .menus span {
-    background-color: white;
-    font-size: 18px;
     width: fit-content;
-    line-height: 1rem;
+    background-color: white;
+    font-size: 23px;
+    font-weight: 500;
+    line-height: 1.5rem;
 }
 
 .menus span:nth-child(1) {
@@ -96,6 +132,14 @@ ul {
     text-decoration: none;
 }
 
+.container .menus a {
+    font-size: 20px;
+    line-height: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .container[class="container"] .menus span {
     visibility: hidden;
 }
@@ -114,47 +158,121 @@ ul {
     text-decoration: none;
 }
 
-.container {
-    display: grid;
-    grid-template: "nav"
-        "main";
-    grid-template-rows: 150px auto;
-    height: 100%;
-}
-
-
 .container.work nav {
     grid-area: "nav";
+}
 
+.container.work ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.container.work ul a {
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px solid black;
+}
+
+.container.work ul li {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr auto;
+    font-size: 1.1em;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.container.work ul li div {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .container.work-detail main {
     grid-area: "main";
     display: grid;
     grid-template: "left right";
-    grid-template-columns: 27% calc(100% - 27%);
+    grid-template-columns: 27% calc(100% - 27% - 30px);
     gap: 30px;
+    overflow-y: hidden;
+    border-top: 0px;
+}
+
+.container.work-detail main .left,
+.container.work-detail main .right {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: calc(100dvh - 165px);
+    overflow-y: scroll;
+    padding-bottom: 15px;
 }
 
 .container.work-detail main .left {
     border-top: 1px solid black;
-    overflow-y: scroll;
-    padding: 15px 0 15px 0;
-    display: flex;
-    flex-direction: column;
 }
 
-.container.work-detail main .right .images {
+.container.work-detail main .left .top-container {
     display: flex;
     flex-direction: column;
-    overflow-y: scroll;
+    gap: 30px;
+    padding-top: 10px;
+}
+
+.container.work-detail main .left .top-container div:last-child {
+    margin-bottom: 90px;
+}
+
+.container.work-detail main .credit {
+    white-space: pre-line;
+}
+
+
+.container.work-detail main .right img {
+    width: 100%;
 }
 
 .critics-container,
 .articles-container {
     border-top: 1px solid black;
+    padding: 1em 0 1em 0;
 }
 
+.container.biography section {
+    border-bottom: 1px solid black;
+    font-size: 18px;
+}
+
+.container.biography section p {
+    padding-top: 5px;
+    padding-bottom: 15px;
+}
+
+.container.biography section>ul {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    margin-bottom: 65px;
+
+}
+
+.container.biography section>ul>li {
+    display: grid;
+    grid-template-columns: 180px auto;
+    margin-bottom: 8px;
+}
+
+.container.biography .description {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.biography-title {
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
 
 @media screen and (max-width: 1280px) {}
 

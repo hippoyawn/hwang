@@ -1,0 +1,118 @@
+<html lang="en">
+    {{ partial "head.html" . }}
+    <body>
+        <div class="container biography">
+            {{ partial "nav.html" . }}
+            <main>
+                <section class="biography-title">
+                    <p>황수현 Hwang Soo hyun</p>
+                </section>
+
+                <section>
+                    <p>경력</p>
+                    <hr />
+                    <ul>
+                        {{ range .Params.experience }}
+                            <li>
+                                <span class="year">{{ .year }}</span>
+                                <span class="description"
+                                    >{{ .description }}</span
+                                >
+                            </li>
+                        {{ end }}
+                    </ul>
+                </section>
+
+                <section>
+                    <p>수상</p>
+                    <hr />
+                    <ul>
+                        {{ range .Params.awards }}
+                            <li>
+                                <span class="year">{{ .year }}</span>
+                                <span class="description"
+                                    >{{ .description }}</span
+                                >
+                            </li>
+                        {{ end }}
+                    </ul>
+                </section>
+
+                <section>
+                    <p>레지던시</p>
+                    <hr />
+                    <ul>
+                        {{ range .Params.residencies }}
+                            <li>
+                                <span class="year">{{ .year }}</span>
+                                <span class="description"
+                                    >{{ .description }}</span
+                                >
+                            </li>
+                        {{ end }}
+                    </ul>
+                </section>
+
+                <section>
+                    <p>교육 및 워크숍</p>
+                    <hr />
+                    <ul>
+                        {{ range .Params.education_workshops }}
+                            <li>
+                                <span class="year">{{ .year }}</span>
+                                <span class="description"
+                                    >{{ .description }}</span
+                                >
+                            </li>
+                        {{ end }}
+                    </ul>
+                </section>
+
+                <section>
+                    <p>안무작</p>
+                    <hr />
+                    <ul>
+                        {{ range .Params.choreography }}
+                            <li>
+                                <span class="year">{{ .year }}</span>
+                                <span class="description"
+                                    >{{ .description }}</span
+                                >
+                            </li>
+                        {{ end }}
+                    </ul>
+                </section>
+
+                <section>
+                    <p>협업 및 협력 프로젝트</p>
+                    <hr />
+                    <ul>
+                        {{ range .Params.collaborations }}
+                            <li>
+                                <span class="year">{{ .year }}</span>
+                                <span class="description"
+                                    >{{ .description }}</span
+                                >
+                            </li>
+                        {{ end }}
+                    </ul>
+                </section>
+
+                <section>
+                    <p>출연작</p>
+                    <hr />
+                    <ul>
+                        {{ range .Params.performances }}
+                            <li>
+                                <span class="year">{{ .year }}</span>
+                                <span class="description"
+                                    >{{ .description }}</span
+                                >
+                            </li>
+                        {{ end }}
+                    </ul>
+                </section>
+            </main>
+        </div>
+    </body>
+</html>

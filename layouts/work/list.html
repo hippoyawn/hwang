@@ -1,23 +1,28 @@
 <html lang="en">
-{{ partial "head.html" . }}
-
-<body>
-    <div class="container {{ .Section }}">
-        {{ partial "nav.html" . }}
-        <main>
-            <p>Work</p>
-            <ul>
-                {{ range sort (where .Site.RegularPages "Section" "work") "Date" "desc" }}
-                <li>
-                    <a href="{{ .RelPermalink }}">
-                        {{ .Title }}
-                    </a>
-                </li>
-                {{ end }}
-            </ul>
-        </main>
-
-    </div>
-</body>
-
+    <html lang="en">
+        {{ partial "head.html" . }}
+        <body>
+            <div class="container work">
+                {{ partial "nav.html" . }}
+                <main>
+                    <ul>
+                        {{ range sort (where .Site.RegularPages "Section" "work") "Date" "desc" }}
+                            <a href="{{ .RelPermalink }}">
+                                <li>
+                                    <div class="title">{{ .Title }}</div>
+                                    <div class="type">
+                                        {{ .Params.workType }}
+                                    </div>
+                                    <div class="venue">{{ .Params.venue }}</div>
+                                    <div class="year">
+                                        {{ time.Format "2006" .Params.startDate }}
+                                    </div>
+                                </li>
+                            </a>
+                        {{ end }}
+                    </ul>
+                </main>
+            </div>
+        </body>
+    </html>
 </html>
