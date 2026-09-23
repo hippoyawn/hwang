@@ -1,0 +1,40 @@
+<html lang="en">
+    {{ partial "head.html" . }}
+    <body>
+        <div class="container news">
+            {{ partial "nav.html" . }}
+            <main>
+                <section>
+                    <ul>
+                        {{ range .Params.news }}
+                        {{ if .link }}
+                            <a href="{{ .link }}">
+                        {{ else }}
+                            <a>
+                        {{ end }}
+                            <li>
+                            <div class="year">
+                                {{ if .end_date }}
+                                    {{ if eq (time.Format "01" .start_date) (time.Format "01" .end_date) }}
+                                        {{ time.Format "2006.01.02" .start_date }}–{{ time.Format "02" .end_date }}
+                                    {{ else }}
+                                        {{ time.Format "2006.01.02" .start_date }}–{{ time.Format "01.02" .end_date }}
+                                    {{ end }}
+                                {{ else }}
+                                    {{ time.Format "2006.01.02" .start_date }}
+                                {{ end }}
+                            </div>
+
+                            <div class="title">{{ .title }}</div>
+                            <div class="venue">{{ .venue }}</div>
+                        </li>
+                        {{ if .link }}
+                            </a>
+                        {{ end }}
+                    {{ end }}
+                    </ul>
+                </section>
+            </main>
+        </div>
+    </body>
+</html>

@@ -164,3 +164,33 @@ collections:
         widget: file
         multiple: true
         required: false
+
+  - name: news
+    label: News
+    folder: /content/news
+    create: true
+    fields:
+      - name: start_date
+        label: 시작 날짜
+        widget: datetime
+        format: YYYY-MM-DD
+        required: true
+
+      - name: end_date
+        label: 종료 날짜
+        widget: datetime
+        format: YYYY-MM-DD
+        required: false
+
+      - name: title
+        label: 제목
+        widget: string
+
+      - name: venue
+        label: 장소
+        widget: string
+
+      - name: link
+        label: 참조 링크
+        widget: string
+        required: false

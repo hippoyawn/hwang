@@ -66,12 +66,15 @@ nav {
     height: 100%;
 }
 
+.container.home main {
+    border-top: 0px;
+}
+
 main {
     font-family: "SM3태명조";
     height: auto;
     overflow-y: scroll;
     border-top: 1px solid black;
-
 }
 
 .menus {
@@ -79,7 +82,7 @@ main {
     display: grid;
     grid-template-columns: repeat(4, auto);
     grid-template-rows: repeat(4, auto);
-    max-width: 420px;
+    max-width: fit-content;
 
 }
 
@@ -158,16 +161,14 @@ ul {
     text-decoration: none;
 }
 
-.container.work nav {
-    grid-area: "nav";
+
+.container.work ul,
+.container.news ul {
+    display: grid;
 }
 
-.container.work ul {
-    display: flex;
-    flex-direction: column;
-}
-
-.container.work ul a {
+.container.work ul a,
+.container.news ul a {
     text-decoration: none;
     color: black;
     border-bottom: 1px solid black;
@@ -176,12 +177,17 @@ ul {
 .container.work ul li {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr auto;
-    font-size: 1.1em;
-    margin-top: 10px;
-    margin-bottom: 15px;
+    padding-block: 5px 20px;
 }
 
-.container.work ul li div {
+.container.news ul li {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    padding-block: 5px 20px;
+}
+
+.container.work ul li div,
+.container.news ul li div {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -216,7 +222,7 @@ ul {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    padding-top: 10px;
+    padding-top: 5px;
 }
 
 .container.work-detail main .left .top-container div:last-child {
@@ -238,21 +244,18 @@ ul {
     padding: 1em 0 1em 0;
 }
 
-.container.biography section {
-    border-bottom: 1px solid black;
-    font-size: 18px;
+.container.biography section>p:first-child {
+    padding-block: 5px 20px;
 }
 
-.container.biography section p {
-    padding-top: 5px;
-    padding-bottom: 15px;
+.container.biography section {
+    border-bottom: 1px solid black;
 }
 
 .container.biography section>ul {
     display: flex;
     flex-direction: column;
-    margin-top: 40px;
-    margin-bottom: 65px;
+    margin-block: 40px 65px;
 
 }
 
