@@ -24,14 +24,16 @@
         </main>
     </div>
     <script>
+    console.log("baseURL:", "{{ .Site.BaseURL }}");
+    console.log("absURL:", "{{ "assets/background/" | absURL }}");
+    console.log("relURL:", "{{ "assets/background/" | relURL }}");
         const isMobile = () => window.innerWidth <= 768 ? true : false;
 
         const setBackground = (mobile) => {
           const count = 5;
           const random = Math.floor(Math.random() * count) + 1;
           document.body.style.backgroundImage =
-            `url("{{ "/assets/background/" | absURL }}${mobile ? "세로" : "가로"}${random}.webp")`;          document.body.style.backgroundPosition = "center";
-          document.body.style.backgroundRepeat = "no-repeat";
+            `url("{{ .Site.BaseURL }}/assets/background/${mobile ? "세로" : "가로"}${random}.webp")`;          document.body.style.backgroundRepeat = "no-repeat";
         }
 
         document.addEventListener("DOMContentLoaded", () => {
