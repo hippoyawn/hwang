@@ -30,7 +30,7 @@
           const count = 5;
           const random = Math.floor(Math.random() * count) + 1;
           document.body.style.backgroundImage =
-            `url("{{ "assets/background/" | absURL | jsonify }}${mobile ? "세로" : "가로"}${random}.webp")`;          document.body.style.filter = "grayscale(100%)";
+            `url("{{ "/assets/background/" | relURL }}${mobile ? "세로" : "가로"}${random}.webp")`;          document.body.style.filter = "grayscale(100%)";
           document.body.style.backgroundPosition = "center";
           document.body.style.backgroundRepeat = "no-repeat";
         }
