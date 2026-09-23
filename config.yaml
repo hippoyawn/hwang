@@ -3,9 +3,10 @@ languageCode: en-us
 titleCaseStyle: none
 capitalizeListTitles: false
 pluralizeListTitles: false
-enableGitInfo: false
+enableGitInfo: true
 pygmentsUseClasses: true
 disableHugoGeneratorInject: true
+baseURL: https://hippoyawn.github.io/hwang
 
 date:
   locale: ko_KR
