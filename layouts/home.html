@@ -33,7 +33,9 @@
           const count = 5;
           const random = Math.floor(Math.random() * count) + 1;
           document.body.style.backgroundImage =
-            `url("{{ .Site.BaseURL }}/assets/background/${mobile ? "세로" : "가로"}${random}.webp")`;          document.body.style.backgroundRepeat = "no-repeat";
+            `url("{{ .Site.BaseURL }}/assets/background/${mobile ? "세로" : "가로"}${random}.webp")`;
+          document.body.style.backgroundRepeat = "no-repeat";
+          document.body.style.backgroundPosition = "center";
         }
 
         document.addEventListener("DOMContentLoaded", () => {
