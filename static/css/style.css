@@ -6,11 +6,13 @@
 }
 
 :root {
-    --nav-height: clamp(110px, 28vw, 150px);
+    --nav-height: clamp(110px, 18vw, 150px);
     --border: 1px solid black;
     --work-detail-left-width: 27%;
     --list-padding: 5px 20px;
     --height: 100dvh;
+    --menu-font-size: clamp(15px, 2.5vw, 20px);
+    --global-font-size:  clamp(11px, 2.5vw, 16px);
 }
 
 ::-moz-selection {
@@ -32,7 +34,7 @@ body {
     width: 100%;
     height: 100%;
     line-height: 1.8rem;
-    font-size: clamp(11px, 2vw, 16px);
+    font-size: var(--global-font-size);
 }
 
 body {
@@ -140,7 +142,7 @@ ul {
 }
 
 .container .menus a {
-    font-size: clamp(15px, 3.5vw, 20px);
+    font-size: var(--menu-font-size);
     line-height: 1.04;
     display: flex;
     align-items: center;
