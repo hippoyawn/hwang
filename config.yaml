@@ -10,6 +10,8 @@ baseURL: https://hippoyawn.github.io/hwang
 
 date:
   locale: ko_KR
+  
+timeZone: Asia/Seoul
 
 buildFuture: true
 

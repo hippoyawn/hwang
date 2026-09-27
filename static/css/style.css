@@ -52,7 +52,7 @@ body {
     width: 100%;
     display: grid;
     grid-template: "nav"
-                    "main";
+        "main";
     grid-template-rows: var(--nav-height) calc(var(--height) - var(--nav-height) - 20px);
     height: var(--height);
     overflow: hidden;
@@ -284,8 +284,6 @@ ul {
 
 @media screen and (max-width: 1280px) {}
 
-@media screen and (max-width: 768px) {
-
-}
+@media screen and (max-width: 768px) {}
 
 @media screen and (max-width: 580px) {}
