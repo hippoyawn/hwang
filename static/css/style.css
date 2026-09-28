@@ -271,7 +271,7 @@ a {
 
 .container.biography section>ul>li {
     display: grid;
-    grid-template-columns: 180px auto;
+    grid-template-columns: clamp(100px, 18vw, 180px) auto;
     margin-bottom: 8px;
 }
 
