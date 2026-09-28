@@ -97,7 +97,6 @@ main {
 
 .menus span {
     width: fit-content;
-    background-color: white;
 }
 
 .menus span:nth-child(1) {
@@ -141,10 +140,18 @@ a {
     text-decoration: none;
 }
 
+.container.home a {
+    color: white;
+}
+
+.container.home span {
+    background-color: none;
+}
+
 .container .menus a {
     font-size: var(--menu-font-size);
     line-height: 1.04;
-    display: flex;
+            display: flex;
     align-items: center;
     justify-content: center;
 }
@@ -154,8 +161,6 @@ a {
 }
 
 .menus span:hover>a:hover {
-    color: white;
-    background-color: black;
     cursor: pointer;
 }
 
@@ -210,7 +215,7 @@ a {
 }
 
 .container.work-detail main .left,
-.container.work-detail main .right {
+.container.work-detail main .right {T
     box-sizing: border-box;
     width: 100%;
     display: flex;
