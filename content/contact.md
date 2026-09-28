@@ -1,5 +1,5 @@
 ---
-title: "Contact"
+title: Contact
+layout: contact
 ---
 
-연락처
