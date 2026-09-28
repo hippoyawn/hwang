@@ -1,6 +1,6 @@
 @font-face {
     font-family: "SM3태명조";
-    src: url("/fonts/SM3Tae.woff2") format("woff2");
+    src: url("./fonts/SM3Tae.woff2") format("woff2");
     font-weight: 500;
     font-style: normal;
     font-display: swap;
