@@ -1,6 +1,6 @@
 @font-face {
-    font-family: "SM3TaeMyeongJo";
-    src: url("/fonts/SM3TaeMyeongJo-Regular.woff2") format("woff2");
+    font-family: "SM3태명조";
+    src: url("/fonts/SM3Tae.woff2") format("woff2");
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -82,7 +82,7 @@ nav {
 }
 
 main {
-    font-family: "SM3TaeMyeongJo", serif;
+    font-family: "SM3태명조", serif;
     height: auto;
     overflow-y: scroll;
     border-top: var(--border)
