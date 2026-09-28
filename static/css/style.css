@@ -12,7 +12,7 @@
     --list-padding: 5px 20px;
     --height: 100dvh;
     --nav-height: clamp(90px, 18vw, 150px);
-    --global-font-size:  clamp(11px, 2.5vw, 16px);
+    --global-font-size:  clamp(10px, 2.5vw, 16px);
     --menu-font-size: clamp(12.5px, 2.5vw, 20px);
     --container-padding: clamp(10px, 2.5vw, 20px);
 }
