@@ -226,6 +226,7 @@ a {
     height: calc(var(--height) - var(--nav-height) - 15px);
     overflow-y: scroll;
     padding-bottom: 15px;
+    scrollbar-width: none;
 }
 
 .container.work-detail main .left {
