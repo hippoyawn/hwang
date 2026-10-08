@@ -211,7 +211,7 @@ a {
 
 .container.work ul li div,
 .container.news ul li div {
-    white-space: nowrap;
+    /* white-space: nowrap; */
     overflow: hidden;
     text-overflow: ellipsis;
 }
