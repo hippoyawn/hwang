@@ -1,15 +1,8 @@
 @font-face {
     font-family: "SM3태명조";
-    src: url("../fonts/SM3Tae2.woff2") format("woff2");
+    src: url("../fonts/SM3Tae.woff2") format("woff2");
     font-weight: 500;
     font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "SangBleu";
-    src: url("../fonts/SangBleu.woff2") format("woff2");
-    font-weight: 500;
     font-display: swap;
 }
 
@@ -19,10 +12,9 @@
     --list-padding: 5px 20px;
     --height: 100dvh;
     --nav-height: clamp(90px, 18vw, 150px);
-    --global-font-size:  clamp(14px, 2.5vw, 16px);
-    --menu-font-size: clamp(16.5px, 2.5vw, 22.5px);
+    --global-font-size:  clamp(10px, 2.5vw, 16px);
+    --menu-font-size: clamp(12.5px, 2.5vw, 20px);
     --container-padding: clamp(8px, 2.5vw, 20px);
-    --list-margin: clamp(6px, 2.5vw, 8px);
     --work-detail-gap-between: clamp(8px 2.5vw, 30px);
 }
 
@@ -93,10 +85,10 @@ nav {
 }
 
 main {
-    font-family: "SangBleu", "SM3태명조";
+    font-family: "SM3태명조", serif;
     height: auto;
     overflow-y: scroll;
-    border-top: var(--border);
+    border-top: var(--border)
 }
 
 .menus {
@@ -285,7 +277,7 @@ a {
 .container.biography section>ul>li {
     display: grid;
     grid-template-columns: clamp(100px, 18vw, 180px) auto;
-    margin-bottom: var(--list-margin);
+    margin-bottom: 8px;
 }
 
 .container.biography .description {
