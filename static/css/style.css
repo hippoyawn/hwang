@@ -201,19 +201,21 @@ a {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr auto;
     padding-block: var(--list-padding);
+    gap: 5px;
 }
 
 .container.news ul li {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 0.7fr 1fr 1fr;
     padding-block: var(--list-padding);
+    gap: 5px;
 }
 
 .container.work ul li div,
 .container.news ul li div {
     /* white-space: nowrap; */
     overflow: hidden;
-    text-overflow: ellipsis;
+    /* text-overflow: ellipsis; */
 }
 
 .container.work-detail main {

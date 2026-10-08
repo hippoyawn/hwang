@@ -14,14 +14,18 @@
                         {{ end }}
                             <li>
                             <div class="year">
-                                {{ if .end_date }}
-                                    {{ if eq (time.Format "01" .start_date) (time.Format "01" .end_date) }}
-                                        {{ time.Format "2006.01.02" .start_date }}–{{ time.Format "02" .end_date }}
+                                {{ if eq (len .start_date) 10 }}
+                                    {{ if .end_date }}
+                                        {{ if eq (time.Format "01" .start_date) (time.Format "01" .end_date) }}
+                                            {{ time.Format "2006.01.02" .start_date }}–{{ time.Format "02" .end_date }}
+                                        {{ else }}
+                                            {{ time.Format "2006.01.02" .start_date }}–{{ time.Format "01.02" .end_date }}
+                                        {{ end }}
                                     {{ else }}
-                                        {{ time.Format "2006.01.02" .start_date }}–{{ time.Format "01.02" .end_date }}
+                                        {{ time.Format "2006.01.02" .start_date }}
                                     {{ end }}
                                 {{ else }}
-                                    {{ time.Format "2006.01.02" .start_date }}
+                                    {{ .start_date }}
                                 {{ end }}
                             </div>
 
