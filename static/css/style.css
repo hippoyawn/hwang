@@ -227,7 +227,7 @@ a {
 }
 
 .container.work-detail main .left,
-.container.work-detail main .right {T
+.container.work-detail main .right {
     box-sizing: border-box;
     width: 100%;
     display: flex;
@@ -309,6 +309,28 @@ a {
 
 @media screen and (max-width: 1280px) {}
 
-@media screen and (max-width: 768px) {}
+@media screen and (max-width: 768px) {
+    .container.work-detail main {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "left"
+            "right";
+        gap: 30px;
+        overflow-y: scroll;
+    }
 
-@media screen and (max-width: 580px) {}
+    .container.work-detail main .left,
+    .container.work-detail main .right {
+        height: auto;
+        overflow-y: visible;
+    }
+    
+    .container.work-detail main .right {
+        padding-bottom: var(--container-padding);
+    }
+}
+
+@media screen and (max-width: 580px) {
+
+
+}
