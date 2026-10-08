@@ -300,9 +300,9 @@ a {
     background-color: white;
 }
 
-.container.contact p:first-child {
+.container.contact p {
     padding-block: var(--list-padding);
-    padding-bottom: 0;
+    border-bottom: var(--border);
 }
 
 @media screen and (max-width: 1280px) {}
