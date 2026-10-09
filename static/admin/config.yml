@@ -11,6 +11,11 @@ logo:
   src: ../assets/logo.jpg
   show_in_header: true
 
+i18n:
+  structure: single_file
+  locales: [ko, en]
+  default_locale: ko
+
 app_title: Hwang Soo Hyun
 
 media_folder: /static/assets
@@ -89,6 +94,7 @@ collections:
     label: Work
     folder: /content/work
     create: true
+    i18n: true
     media_folder: "{{media_folder}}/work/{{slug}}"
     public_folder: "{{public_folder}}/work/{{slug}}"
     fields:
@@ -96,42 +102,50 @@ collections:
         label: 제목
         widget: string
         required: true
+        i18n: duplicate
 
       - name: workType
         label: 작업 유형
         widget: string
         required: true
+        i18n: duplicate
 
       - name: startDate
         label: 시작 날짜
         widget: datetime
         type: date
         required: true
-
+        i18n: duplicate
+        
       - name: endDate
         label: 종료 날짜
         widget: datetime
         type: date
         required: true
-
+        i18n: duplicate
+        
       - name: venue
         label: 공연 장소
         widget: string
         required: true
-
+        i18n: duplicate
+        
       - name: credit
         label: 크레딧
-        widget: textarea
+        widget: richtext
         required: true
-
+        i18n: duplicate
+        
       - name: production
         label: 제작, 주최 및 후원
         widget: text
-
+        i18n: duplicate
+        
       - name: description
         label: 작품 내용
         widget: text
         required: true
+        i18n: true
 
       - name: articles
         label: 기사

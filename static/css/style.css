@@ -73,6 +73,31 @@ body {
     overflow: hidden;
 }
 
+.container[data-language="ko"] [data-lang="en"] {
+  display: none;
+}
+
+.container[data-language="en"] [data-lang="ko"] {
+  display: none;
+}
+
+.container[data-language="ko"] [data-lang="en"] {
+  display: none;
+}
+
+.container[data-language="en"] [data-lang="ko"] {
+  display: none;
+}
+
+[data-lang] p,
+[data-lang] ul {
+  margin-bottom: 1rem;
+}
+
+[data-lang] p:last-child {
+  margin-bottom: 0;
+}
+
 hr {
     display: block;
     height: 1px;
@@ -86,6 +111,12 @@ nav {
     position: sticky;
     top: 0;
     height: 100%;
+    
+    
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
 .container.home main {
@@ -152,6 +183,23 @@ a {
     text-decoration: none;
 }
 
+.container nav .lang-button {
+    font-family: Helvetica, "Arial", sans-serif;
+    font-size: var(--menu-font-size);
+    line-height: 1.04;
+    background: none;
+    border: none;     
+    padding: 0;
+}
+
+.container nav .lang-button:hover {
+    cursor: pointer;
+}
+
+.container.home nav .lang-button {
+    display: none;
+}
+
 .container.home a {
     color: white;
 }
@@ -163,7 +211,7 @@ a {
 .container .menus a {
     font-size: var(--menu-font-size);
     line-height: 1.04;
-            display: flex;
+    display: flex;
     align-items: center;
     justify-content: center;
 }
@@ -288,6 +336,7 @@ a {
     display: grid;
     grid-template-columns: clamp(100px, 18vw, 180px) auto;
     margin-bottom: var(--list-margin);
+    gap: 5px;
 }
 
 .container.biography .description {

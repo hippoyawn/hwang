@@ -7,29 +7,32 @@
                 <div class="left">
                     <div class="top-container">
                         <div>
-                            <p class="title">{{ .Title }}</p>
-                            <p class="workType">{{ .Params.workType }}</p>
+                            <p class="title">{{ .Params.ko.title }} {{ .Params.en.title }}</p>
+                            <p class="workType" data-lang="ko">{{ .Params.ko.workType }}</p>
+                            <p class="workType" data-lang="en">{{ .Params.en.workType }}</p>    
                             <p class="date">
-                                {{ time .Params.startDate | time.Format "2006.01.02" }}-{{ time .Params.endDate | time.Format "02" }}
+                                {{ time .Params.ko.startDate | time.Format "2006.01.02" }}-{{ time .Params.ko.endDate | time.Format "02" }}
                             </p>
-                            <p class="venue">{{ .Params.venue }}</p>
-                            <p class="production">{{ .Params.production }}</p>
+                            <p class="venue" data-lang="ko">{{ .Params.ko.venue }}</p>
+                            <p class="venue" data-lang="en">{{ .Params.en.venue }}</p>
+                            <p class="production" data-lang="ko">{{ .Params.ko.production }}</p>
+                            <p class="production" data-lang="en">{{ .Params.en.production }}</p>
                         </div>
 
                         <div>
-                            <p class="description">{{ .Params.description }}</p>
+                            <p class="description" data-lang ="ko">{{ .Params.ko.description | markdownify }}</p>
+                            <p class="description" data-lang ="en">{{ .Params.en.description | markdownify }}</p>
                         </div>
 
                         <div>
-                            <p class="credit">
-                                {{ .Params.credit | markdownify }}
-                            </p>
+                            <p class="credit" data-lang="ko">{{ .Params.ko.credit | markdownify }}</p>
+                            <p class="credit" data-lang="en">{{ .Params.en.credit | markdownify }}</p>
                         </div>
                     </div>
 
                     <div class="articles-container">
                         <ul>
-                            {{ range .Params.articles }}
+                            {{ range .Params.ko.articles }}
                                 <li>
                                     <a href="{{ .url }}">{{ .title }}</a>
                                 </li>
@@ -39,7 +42,7 @@
 
                     <div class="critics-container">
                         <ul>
-                            {{ range .Params.critics }}
+                            {{ range .Params.ko.critics }}
                                 <li>
                                     <a href="{{ .url }}">{{ .title }}</a>
                                 </li>
@@ -48,7 +51,7 @@
                     </div>
                 </div>
                 <div class="right">
-                    {{ range .Params.images }}
+                    {{ range .Params.ko.images }}
                         <img src="{{ . }}" alt="" />
                     {{ end }}
                 </div>
